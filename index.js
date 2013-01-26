@@ -39,7 +39,7 @@ module.exports = function (fn) {
             
             sum += fn(note, t);
         }
-        return notes.length ? sum / notes.length : 0;
+        return notes.length ? sum / Math.sqrt(notes.length) : 0;
     });
     
     return {
