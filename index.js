@@ -42,7 +42,11 @@ module.exports = function (fn) {
         return notes.length ? sum / Math.sqrt(notes.length) : 0;
     });
     
-    return {
-        play: function () { b.play({ buffer: 80 }) }
+    var play = b.play;
+    b.play = function (opts) {
+        if (!opts) opts = {};
+        if (!opts.buffer) opts.buffer = 80;
+        return play.call(b, opts);
     };
+    return b;
 };
