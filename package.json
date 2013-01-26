@@ -2,8 +2,9 @@
     "name": "asynth",
     "version": "0.0.0",
     "description": "live midi synthesizer",
+    "main": "index.js",
     "bin": {
-        "asynth": "cmd.js"
+        "asynth": "bin/cmd.js"
     },
     "dependencies": {
         "midi": "~0.6.0",
