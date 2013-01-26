@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var midi = require('midi');
 var input = new midi.input();
 var baudio = require('baudio');
