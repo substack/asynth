@@ -3,6 +3,7 @@
 var midi = require('midi');
 var baudio = require('baudio');
 var tau = Math.PI * 2;
+var now = 0;
 
 module.exports = function (fn) {
     var input = new midi.input();
@@ -13,10 +14,10 @@ module.exports = function (fn) {
         
         if (message[2] === 0) {
             for (var i = 0; i < notes.length && notes[i].key !== note; i++);
-            notes[i].up = Date.now();
+            if (notes[i]) notes[i].up = now;
         }
         else {
-            notes.push({ key: note, down: Date.now() });
+            notes.push({ key: note, down: now });
         }
     }); 
 
@@ -26,15 +27,17 @@ module.exports = function (fn) {
     var b = baudio({ size: 16, rate: 44000 });
 
     b.push(function (t) {
+        now = t;
         var sum = 0;
         
         for (var i = 0; i < notes.length; i++) {
             var note = notes[i];
-            if (!note.start) note.start = t * 1000;
-            var elapsed = t * 1000 - note.start;
+            if (!note.start) note.start = t;
+            var elapsed = note.elapsed = t - note.start;
             if (note.up && elapsed >= note.up - note.down) {
                 notes.splice(i, 1);
                 i --;
+                continue;
             }
             
             sum += fn(note, t);
