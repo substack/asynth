@@ -15,14 +15,13 @@ module.exports = function (fn) {
         if (message[2] === 0) {
             for (var i = 0; i < notes.length && notes[i].key !== note; i++);
             if (notes[i]) notes[i].up = now;
-        }
-        else {
+        } else {
             notes.push({ key: note, down: now });
         }
     }); 
 
     input.ignoreTypes(false, false, false);
-    input.openPort(1);
+    input.openPort(0);
 
     var b = baudio({ size: 16, rate: 44000 });
 

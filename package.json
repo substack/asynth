@@ -1,29 +1,29 @@
 {
-    "name": "asynth",
-    "version": "0.1.1",
-    "description": "live midi synthesizer",
-    "main": "index.js",
-    "bin": {
-        "asynth": "bin/cmd.js"
-    },
-    "dependencies": {
-        "midi": "~0.6.0",
-        "baudio": "~1.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/substack/midi-synth.git"
-    },
-    "homepage": "https://github.com/substack/midi-synth",
-    "keywords": [
-        "midi",
-        "synth",
-        "music"
-    ],
-    "author": {
-        "name": "James Halliday",
-        "email": "mail@substack.net",
-        "url": "http://substack.net"
-    },
-    "license": "MIT"
+  "name": "asynth",
+  "version": "0.1.1",
+  "description": "live midi synthesizer",
+  "main": "index.js",
+  "bin": {
+    "asynth": "bin/cmd.js"
+  },
+  "dependencies": {
+    "midi": "~0.7.1",
+    "baudio": "~1.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/midi-synth.git"
+  },
+  "homepage": "https://github.com/substack/midi-synth",
+  "keywords": [
+    "midi",
+    "synth",
+    "music"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
 }
