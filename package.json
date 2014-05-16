@@ -12,9 +12,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/substack/midi-synth.git"
+        "url": "git://github.com/substack/asynth.git"
     },
-    "homepage": "https://github.com/substack/midi-synth",
+    "homepage": "https://github.com/substack/asynth",
     "keywords": [
         "midi",
         "synth",
